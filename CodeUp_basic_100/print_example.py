@@ -16,3 +16,11 @@ print("\"!@#$%^&*()\"")
 #7 Output path of Window operating system
 print("\"C:\\Download\\hello.cpp\"")
 
+#7 Output speacial chracters using unicode
+# When I use a unicode or hanguel, have to use below code
+# import io, sys
+# sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf8')
+
+print("\u250C\u252C\u2510")
+print("\u251C\u253C\u2524")
+print("\u2514\u2534\u2518")
