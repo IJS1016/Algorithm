@@ -1,42 +1,48 @@
 #include <iostream>
-#include <cmath>
 
 using namespace std;
 
 /* 수정하기 및 코드 줄이기*/
 
 int main(void){
-    int n, a, b, tmp, arr[5] = {1, };
+    int n;
+    
+    // test cases
     std::cin >> n;
 
     for (int i=0; i < n; i++){
+        int a, b, arr[5];
         std::cin >> a >> b;
-        
-        int tmp = a, loop = 1;
 
-        if (b == 0) {
-            std::cout << "1\n";
+        if (a % 10 == 0) {
+            a = 10;
         }
+        else {
+            a = a % 10;
+        }
+        
+        int tmp = a, loop = -1;
 
-        arr[1] = a;
+        arr[0] = a;
 
-        for (int j = 2; j <= b; j++) {
-            tmp = (tmp * a) % 10;
-            arr[j] = tmp;
+        for (int j = 1; j < b; j++) {
+            tmp = (tmp * a) % 10;  
+            if (tmp == 0) {
+                tmp = 10;
+            }
 
-            if (tmp == (a % 10)) {
-                loop = j - 1;
+            if (tmp == a) {
+                loop = j;
                 break;
             }
+            arr[j] = tmp;
         }
+        
         if (loop == -1) { 
             std::cout << tmp << "\n";
         }
-        else if (loop == 1) { 
-            std::cout << arr[1] << "\n";
-        }
         else {
-            std::cout << arr[b % loop] << "\n";
+            std::cout << arr[(b-1) % loop] << "\n";
         }
     }
 }
