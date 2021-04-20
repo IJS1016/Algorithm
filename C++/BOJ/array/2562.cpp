@@ -25,7 +25,7 @@ int main(void){
         std::cin>>arr[i];
     }
     max = arr[0];
-
+zx
     for (int i=1; i<9; i++){
         if (max < arr[i]){
             max = arr[i];
