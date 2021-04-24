@@ -12,7 +12,7 @@ int main(void){
             cnt += 1;
             x = x - l;
         }
-        l = l / 2;
+        l = l / 2;∑
     }
     std::cout<<cnt;
 }
