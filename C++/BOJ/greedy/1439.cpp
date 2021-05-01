@@ -2,7 +2,8 @@
 
 using namespace std;
 
-/*뒤집기 - https://www.acmicpc.net/problem/1439*/
+/*뒤집기 - https://www.acmicpc.net/problem/1439
+*/
 int main(void){
     int S_LEN = 1000000;
     char s[S_LEN];
