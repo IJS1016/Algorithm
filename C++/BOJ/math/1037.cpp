@@ -14,5 +14,4 @@ int main(void){
     
 }
 int get_divisor(int num){
-    
 }
