@@ -4,7 +4,7 @@ using namespace std;
 
 
 /* HAVE TO SOLVE
-문제 : 중간에 이상한 단어가 포함 되서 나옴
+문제 : 중간에 이상한 단어가 포함 되서 나옴 -> 단어 선언 개수 때문에
 OutOfBound Error*/
 
 int main(void){
@@ -16,14 +16,15 @@ int main(void){
 
     std::cin>>n;
 
-    char words[n][51], word[51];
+    char words[n+1][51], word[51];
 
     // get words except overlap words
-    for (int i=0; i < n; i++){
+    for (int i = 0; i < n; i++){
         int flag = 0;
+
         std::cin>>word;
 
-        for (int j=0; j < i; j++){
+        for (int j = 0; j < i; j++){
             if (!strcmp(words[j], word)){
                 flag = 1;
                 i = i-1;
@@ -40,7 +41,7 @@ int main(void){
     for (int i = 0; i < n; i++){
         char temp[51];
 
-        for (int j=0; j < n-i; j++){
+        for (int j=0; j < n-i-1; j++){
             if (strlen(words[j]) > strlen(words[j+1])){
                 strcpy(temp, words[j]);
                 strcpy(words[j], words[j+1]);
@@ -64,7 +65,7 @@ int main(void){
         }
     }
 
-    for (int i=0; i <= n; i++){
+    for (int i=0; i < n; i++){
         std::cout<<words[i]<<"\n";
     }
 }
