@@ -1,8 +1,14 @@
 #include <iostream>
-#include <string>
+#include <cstring>
 
 using namespace std;
 
+
+/* 그룹단어체커 https://www.acmicpc.net/problem/1316
+오답 : 루프 돌 때마다 배열 초기화 안 해주면 그 전 배열의 정보가 남아있음
+      쓰지 않는 변수, 배열은 선언하지 않기
+      strlen 사용하는 경우 cstring 반드시 선언하기
+*/
 int main(void){
     int n, cnt=0;
 
@@ -16,8 +22,6 @@ int main(void){
 
         word_not_overlap[0] = word[0];
 
-
-        //std::cout<<"S"<<word<<" "<<flag<<"\n";
         // 중복 제거
         for (int j=1; j<strlen(word); j++){
             if (word[j-1]!=word[j]){
@@ -37,9 +41,6 @@ int main(void){
                 }
             }
         }
-
-        //std::cout<<"LEN "<<strlen(word)<<" "<<strlen(word_not_overlap)<<"\n";
-        //std::cout<<"A"<<word<<" "<<flag<<"\n";
 
         if (flag == 0){
             cnt += 1;

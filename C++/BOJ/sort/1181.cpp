@@ -5,7 +5,12 @@ using namespace std;
 
 /* HAVE TO SOLVE
 문제 : 중간에 이상한 단어가 포함 되서 나옴 -> 단어 선언 개수 때문에
-OutOfBound Error*/
+OutOfBound Error
+-> 오답 : sort시에 j 범위 잘 못 설정(max(j+1)=n+1로 OutofBound)
+
+210506 코드는 돌지만 시간초과
+-> 오답 : sort 방법 공부 & 변경 해보기
+*/
 
 int main(void){
     ios::sync_with_stdio(false);
