@@ -2,6 +2,8 @@
 
 using namespace std;
 
+/* 쉽게 푸는 문제 https://www.acmicpc.net/problem/1292 */
+
 int main(void){
     int start, end, result=0;
     std::cin>>start>>end;
