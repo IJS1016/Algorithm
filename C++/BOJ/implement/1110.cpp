@@ -2,6 +2,8 @@
 
 using namespace std;
 
+/* 더하기 사이클 https://www.acmicpc.net/problem/1110 */
+
 int main(void){
 
     int original, x=-1, x_10, x_1, cnt=0;
