@@ -2,6 +2,11 @@
 
 using namespace std;
 
+/* 1. 배열 함수 만드는 것
+   2. 배열 초기 선언하는거 공부하기
+   3. dps 먼저 확인 -> 코드 깔끔하게 수정
+*/
+
 int main(void){
     int n_node, n_line, v;
 
@@ -76,7 +81,7 @@ int main(void){
         }
     }
     */
-    for (int i=0; i < sizeof(dfs); i++){
+    for (int i=0; i < N_NODE; i++){
         std::cout<<dfs[i]<<" ";
     }
 
