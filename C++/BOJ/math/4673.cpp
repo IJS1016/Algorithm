@@ -2,11 +2,9 @@
 #include <algorithm>
 using namespace std;
 
-// 각 자리수 + 전체 자리수
-// 각 자리수 -> 369 -> 100 나눈 몫, 10 나눈 몫의 한자리수, 1 나눈 몫의 한자리수
+/* 셀프 넘버 https://www.acmicpc.net/problem/4673 */
 
 int main(void){
-    // 우선 셀프 넘버를 생성하는 코드를 짜기
     int limit = 10000, excepts[10000], cnt = 0;
 
     for (int i=1; i<=limit; i++){
@@ -38,7 +36,7 @@ int main(void){
             cnt += 1;
         }
     }    
-    
+
     sort(excepts, excepts+cnt);
 
     cnt = 0;
