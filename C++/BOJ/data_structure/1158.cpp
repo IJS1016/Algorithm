@@ -5,7 +5,9 @@ using namespace std;
 /*HAVE TO SOLVE
 1 4 5 0 0 일 때 5가 사라지는 경우 -> n이 업데이트 하기 전 나눠져서 0이 출력
 그렇다고 n을 항상 업데이트하면 X
-오답 -> n을 업데이트 후 idx가 n을 넘으면 또 다시 나머지를 구해줌*/
+오답 -> n을 업데이트 후 idx가 n을 넘으면 또 다시 나머지를 구해줌
+
+코드 다듬기 및 Runtime error 수정*/
 
 int main(void){
     int n, k, idx=0, cnt=0;
