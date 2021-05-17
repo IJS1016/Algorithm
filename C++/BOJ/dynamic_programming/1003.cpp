@@ -2,35 +2,34 @@
 
 using namespace std;
 
-int zero_cnt, one_cnt;
+/* 피보나치 함수 1003
+시간초과 -> 각 피보나치 함수가 재귀로 돌지 않고 f(n) -> f(n-1), f(n-2)로 중복 되는 것들 계산 하지 않도록 하기*/
 
-int fibonacci(int n) {
-    if (n == 0) {
-        zero_cnt += 1;
-        return 0;
-    } else if (n == 1) {
-        one_cnt += 1;
-        return 1;
-    } else {
-        return fibonacci(n-1) + fibonacci(n-2);
+//int results[4][2] = [[1, 0], [0, 1], [1, 1], [1, 2], [2, 3]];
+
+int print_cnt_num(int n){
+    int cnt0 = 1, cnt1 = 0, tmp;
+
+    while (n > 0) {
+        tmp = cnt1;
+        cnt1 = cnt0 + cnt1;
+        cnt0 = tmp;
+        n -= 1;
     }
+
+    printf("%d %d\n", cnt0, cnt1);
+    return 0;
 }
+
 
 int main(void){
     int n, test_case;
 
-    std::cin>>n;
+    scanf("%d", &n);
 
     for (int i=0; i<n; i++){
-        zero_cnt = 0;
-        one_cnt  = 0;
-
         scanf("%d", &test_case);
-
-        fibonacci(test_case);
-
-        printf("%d %d\n", zero_cnt, one_cnt);
+        print_cnt_num(test_case);
     }
-
 }
 
