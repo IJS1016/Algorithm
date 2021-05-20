@@ -1,6 +1,7 @@
 #include <iostream>
-#include <cstring>
 using namespace std;
+
+/* 별 찍기-2 */
 
 int main(void){
     int n;
