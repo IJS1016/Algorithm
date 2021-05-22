@@ -2,6 +2,8 @@
 
 using namespace std;
 
+/* 구구단 https://www.acmicpc.net/problem/2739 */
+
 int main(void){
     int n;
 
