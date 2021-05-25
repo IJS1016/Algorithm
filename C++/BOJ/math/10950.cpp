@@ -10,5 +10,4 @@ int main(void){
         std::cin>>a>>b;
         std::cout<<a+b<<"\n";
     }
-
 }
