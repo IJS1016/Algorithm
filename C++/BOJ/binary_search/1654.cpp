@@ -9,8 +9,8 @@ using namespace std;
 
 
 int main(void){
-    int k, n, lines[10000];
-    int middle, start=0, end=0, result;
+    long long k, n, lines[10000];
+    long long middle, start=0, end=0;
 
     std::cin>>k>>n;
 
@@ -21,29 +21,27 @@ int main(void){
         }
     }
 
-    int cnt = 0;
+    long long cnt = 0;
 
-    while (start < end) {
+    while (start <= end) {
         cnt = 0;
         middle = (start + end) / 2;
 
-        std::cout<<cnt<<"->"<<start<<" "<<middle<<" "<<end<<"\n";
+        if (middle == 0) {
+            std::cout<<"1\n";
+            return 0;
+        }
 
         for (int i=0; i<k; i++){
             cnt += lines[i] / middle;
         }
         if (cnt < n) {
-            end = middle;
+            end = middle-1;
         }
-        else if (cnt > n) {
-            start = middle;
+        else if (cnt >= n) {
+            start = middle+1;
         }
-        else {
-            result = middle;
-            start  = middle+1;
-        }
-        //std::cout<<cnt<<"->"<<start<<" "<<end<<"\n";
     }
-    //std::cout<<cnt<<"->"<<start<<" "<<end<<"\n";
-    std::cout<<result;
+    std::cout<<end;
+    return 0;
 }
