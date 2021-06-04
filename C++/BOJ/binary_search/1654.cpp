@@ -1,11 +1,8 @@
 #include <iostream>
-#include <algorithm>
-
 using namespace std;
 
 
-/* 랜선 자르기 https://www.acmicpc.net/problem/1654
-첫번째 풀이 : 시간 초과 -> 이분탐색 방법 공부하고 이용해보기 */
+/* 랜선 자르기 https://www.acmicpc.net/problem/1654 */
 
 
 int main(void){
