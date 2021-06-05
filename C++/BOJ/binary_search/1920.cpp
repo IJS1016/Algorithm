@@ -3,6 +3,11 @@
 
 using namespace std;
 
+/* 1920 수 찾기 - 수정하기
+이진탐색 - 직접 구현하지 않고 binary search 함수로도 풀 수 있음
+       - 직접 구현시 포인터를 사용해야지 배열 전체를 안불러와 더 빠르다고 함
+       https://www.acmicpc.net/board/view/67289 */
+
 int main(void){
     int n, m;
 
