@@ -2,6 +2,9 @@
 
 using namespace std;
 
+/* https://www.acmicpc.net/problem/10773
+1의 자리수가 아닌 경우 수정이 필요 */
+
 int main(void){
     int k, idx=0;
     long long result=0;
