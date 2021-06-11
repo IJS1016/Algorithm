@@ -1,6 +1,6 @@
 #include <iostream>
 
-/* 너무 큰 배열*/
+/* 1929 소수 https://www.acmicpc.net/problem/1929 */
 
 int array[1000001];
 
@@ -13,16 +13,13 @@ int main(void){
         array[i] = i;
     }
 
-    //std::cout<<n<<"\n\n";
-
-    for (int cnt=2; cnt <= n; cnt++){
-        //std::cout<<cnt<<"\n\n";
+    for (int cnt=2; cnt <= n; cnt++){        
         if (array[cnt] != 0) {
             if (cnt >= m){
                 std::cout<<array[cnt]<<"\n";
             }
             for (int i=cnt; i <= n; i += cnt){
-                array[cnt + i] = 0;
+                array[i] = 0;
             }
         }
     }
