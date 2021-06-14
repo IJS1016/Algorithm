@@ -8,8 +8,7 @@ using namespace std;
                 cout을 사용할 때도 top을 입력하면 error 발생
                 => 오답 : 변수 선언을 반복문 안에다 해서 그런 것임..^^
                 => c++ stack을 사용시, stack이 비어있을 때 pop, top 사용시 프로그램이 종료 되어 버림 */
-
-
+// 내일 printf 사용해서 해보기, char & printf 조합
 
 int main(void) {
     int N;
