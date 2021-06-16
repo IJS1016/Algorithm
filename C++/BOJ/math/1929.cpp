@@ -1,6 +1,7 @@
 #include <iostream>
 
-/* 1929 소수 https://www.acmicpc.net/problem/1929 */
+/* 1929 소수 https://www.acmicpc.net/problem/1929
+            오 이 방법이 에라토스테네스의 체이구나 */
 
 int array[1000001];
 
