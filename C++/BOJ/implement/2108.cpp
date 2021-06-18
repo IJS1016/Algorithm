@@ -1,16 +1,15 @@
 #include <iostream>
 #include <algorithm>
 
-/* 문제 다시 풀기 
-https://www.acmicpc.net/problem/2108
-mode 값 다시 생각해서 풀이
-*/
+/* 통계학  https://www.acmicpc.net/problem/2108
+합 범위 값(long long & double) 및 반올림 .0f로 사용 */
 
 int main(void) {
-    int n, element_sum = 0, middle = 0, range;
-    int array[500000] = {0,};
+    long long n, middle = 0, range;
+    double element_sum=0;
+    int array[500001]  = {0,};
 
-    scanf("%d", &n);
+    scanf("%lld", &n);
 
     for (int i=0; i<n; i++){    
         scanf("%d", &array[i]);
@@ -21,27 +20,29 @@ int main(void) {
     std::sort(array, array+n);
 
     middle = array[n/2];
-    range = array[n-1] - array[0];
+    range  = array[n-1] - array[0];
 
-    int check = array[0], mode_array[8000]={array[0], }, mode_idx = 0, cnt=1, max_cnt=1;
+    int check = array[0], mode_array[8001]={array[0], }, mode_idx = 0, cnt=1, max_cnt=1;
 
     for (int i=1; i<n; i++){    
-        if (check == array[i]) {
+        if (check == array[i])  {
             cnt += 1;
         }
 
         else if (cnt == max_cnt) {
+            mode_array[mode_idx]  = check;
             mode_idx += 1;
 
             check = array[i];
-            mode_array[mode_idx]  = array[i-1];
             cnt     = 1;
         }
+
         else if (cnt > max_cnt) {
             mode_idx = 0;
-            check = array[i];
+            mode_array[mode_idx]  = check;
+            mode_idx += 1;
 
-            mode_array[mode_idx]  = array[i-1];
+            check = array[i];
 
             max_cnt = cnt;
             cnt     = 1;
@@ -53,17 +54,22 @@ int main(void) {
         }
     }
 
-    printf("ELEMENT SUM %d\nIDEX %d\n", element_sum, mode_idx);
-
-
-    if (element_sum < 0 && element_sum % n != 0) {    
-        printf("%d\n", element_sum / n - 1);
-    }
-    else {
-        printf("%d\n", element_sum / n);
+    if (cnt == max_cnt) {
+        mode_array[mode_idx]  = check;
+        mode_idx += 1;
     }
 
-    printf("%d\n", middle);
+    else if (cnt > max_cnt) {
+        mode_idx = 0;
+        mode_array[mode_idx]  = check;
+        mode_idx += 1;
+
+        max_cnt = cnt;
+    }
+
+    printf("%.0f\n", element_sum / (double)n);
+
+    printf("%lld\n", middle);
 
     if (mode_idx > 1) {
         printf("%d\n", mode_array[1]);
@@ -72,7 +78,7 @@ int main(void) {
         printf("%d\n", mode_array[0]);
     }
 
-    printf("%d\n", range);
+    printf("%lld\n", range);
 
 }
 
