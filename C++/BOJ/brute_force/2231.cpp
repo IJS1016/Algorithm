@@ -1,5 +1,7 @@
 #include <iostream>
 
+/* 분해합 https://www.acmicpc.net/problem/2231 */
+
 int main(void) {
     int n, m;
 
