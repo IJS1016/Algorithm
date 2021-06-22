@@ -1,6 +1,7 @@
 #include <iostream>
 
-/* 나무자르기 https://www.acmicpc.net/problem/2805 */
+/* 나무자르기 https://www.acmicpc.net/problem/2805 
+    10퍼에서 틀림*/
 
 int main(void) {
     int n, m;
@@ -16,7 +17,7 @@ int main(void) {
         } 
     }
 
-    long long start=0, end=max_length, mid = max_length / 2, tmp=mid;
+    long long start=0, end=max_length, mid = max_length / 2;
     long long total_lengths=0;
 
     while (start < end) {
@@ -31,10 +32,8 @@ int main(void) {
             }
         } 
 
-        printf("%lld %lld %lld\n", start, end, total_lengths);
-
         if (total_lengths > m) {
-            start = mid;
+            start = mid+1;
         }
         else if (total_lengths < m) {
             end   = mid-1;
@@ -44,15 +43,22 @@ int main(void) {
             return 0;
         }
         mid = (start + end) / 2;
-
-        if (tmp == mid) {
-            printf("%lld\n", mid);
-            return 0;
-        }
-
-        tmp = mid;
     }
 
-    printf("%lld\n", mid);
+    total_lengths = 0;
+
+    for (int i=0; i<n; i++){
+        if (lengths[i] - mid > 0){
+            total_lengths += lengths[i] - mid;
+        }
+    }
+    if (total_lengths < m) {    
+        printf("%lld\n", mid-1);
+    }
+    else {
+        printf("%lld\n", mid);
+    }
+
     return 0;
+
 }
