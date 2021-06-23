@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cmath>
 
+/* 달팽이는 올라가고 싶다. https://www.acmicpc.net/problem/2869 */
+
 int main(void){
     int a, b, v, day = 1;
 
