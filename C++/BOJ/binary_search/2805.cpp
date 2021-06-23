@@ -1,7 +1,7 @@
 #include <iostream>
 
 /* 나무자르기 https://www.acmicpc.net/problem/2805 
-    10퍼에서 틀림*/
+    10퍼에서 틀림 -> 마지막 total_lenght보다 작은지 조건을 줌으로서 해결*/
 
 int main(void) {
     int n, m;
