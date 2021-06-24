@@ -1,6 +1,8 @@
 #include <iostream>
 #include <algorithm>
 
+/* 수 정렬하기2 https://www.acmicpc.net/problem/2751 */
+
 int nums[10000000];
 
 int main(void) {
