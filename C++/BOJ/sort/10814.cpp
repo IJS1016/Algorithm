@@ -1,28 +1,24 @@
 #include <iostream>
 #include <algorithm>
-#include <tuple>
 #include <vector>
 #include <cstring>
 
 using namespace std;
 
+/* 나이순 정렬 https://www.acmicpc.net/problem/10814
+   string은 cin만 먹힌다고 함 
+   algorithm sort는 들어온 순서가 유지 안되는 unstable sort
+   값이 같을 때 입력 순서를 유지하고 싶은 경우는 stable_sort 사용 */
 
-/* https://www.acmicpc.net/problem/10814
-string은 cin만 먹힌다고 함*/
-
-bool cmp(tuple<int, string, int> a, tuple<int, string, int> b){
-    if (a.first == b.first){
-        return a.third < b.third;
-    }
-    else {
-        return a.first < b.first;
-    }
+bool cmp(pair<int, string> a, pair<int, string> b){
+    return a.first < b.first;
+    
 }
 
 int main(void) {
     int n;
 
-    typedef tuple<int, string, int> v;
+    vector<pair<int, string> > v;
 
     scanf("%d", &n);
 
@@ -31,10 +27,10 @@ int main(void) {
 
     for (int i=0; i < n; i++){
         cin>>in_int>>in_name;
-        v.push_back(make_tuple(in_int, in_name, i));
+        v.push_back(pair<int, string>(in_int, in_name));
     }
 
-    sort(v.begin(), v.end());
+    stable_sort(v.begin(), v.end(), cmp);
 
     for (int i=0; i < n; i++){
         cout<<v[i].first<<" "<<v[i].second<<"\n";
