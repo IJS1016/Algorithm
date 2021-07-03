@@ -11,7 +11,7 @@ int main(void){
 
     for (int i=0; i<t; i++){
         std::cin>>h>>w>>n;
-
+ 
         int floor = n % h;
         int room_num = n / h;
 
