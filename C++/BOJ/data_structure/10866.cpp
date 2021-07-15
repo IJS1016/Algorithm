@@ -1,6 +1,10 @@
 #include <iostream>
 #include <cstring>
 
+
+/* 덱  https://www.acmicpc.net/problem/10866 */
+
+
 void empty(int size) {
     if (size == 0) {
         printf("1\n");
@@ -19,13 +23,13 @@ int front(int deque[], int size) {
     return 1;
 }
 
-void back(int deque[], int size) {
+int back(int deque[], int size) {
     if (size == 0) {
         printf("-1\n");
+        return -1;
     }
-    else {
-        printf("%d\n", deque[size-1]);
-    }
+    printf("%d\n", deque[size-1]);
+    return 1;
 }
 
 void push_front(int deque[], int x, int size) {
@@ -61,13 +65,13 @@ void pop_front(int deque[], int size) {
 }
 
 void pop_back(int deque[], int size) {
-    if (!(front(deque, size) == -1)) {
+    if (!(back(deque, size) == -1)) {
         deque[size-1] = 0;
     }
 }
 
 int main(void) {
-    int deque[100000];
+    int deque[100005];
     int size = 0, n, x;
     char opt[11];
 
