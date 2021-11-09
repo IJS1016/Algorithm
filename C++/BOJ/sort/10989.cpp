@@ -24,6 +24,7 @@ int main() {
 
 }
 
+/* max_num 을 이용해서 가장 큰 값까지 출력해주면 '출력오류'가 발생 */
 
 // int main() {
 //     int n, num, max_num;
