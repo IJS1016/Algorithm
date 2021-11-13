@@ -1,3 +1,5 @@
+# https://www.acmicpc.net/problem/1158
+
 n, k = input().split(" ")
 #n, k = 7, 3
 
