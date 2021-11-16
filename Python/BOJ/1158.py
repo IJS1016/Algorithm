@@ -9,7 +9,7 @@ k = int(k)
 array = [x for x in range(n)]
 result = []
 
-idx = k
+idx = k % n
 
 while len(array) > 0 :
     result.append(array.pop(idx))
