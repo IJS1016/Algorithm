@@ -1,4 +1,5 @@
 # https://www.acmicpc.net/problem/1233
+
 s1, s2, s3 = list(map(int, input().split(" ")))
 
 result = [0] * (s1 + s2 + s3 + 1)
